@@ -15,8 +15,10 @@ export default async function handler(req, res) {
 
     return res.status(200).json(response.data);
   } catch (error) {
-    return res.status(500).json(
-      error.response?.data || { message: error.message }
-    );
-  }
+  console.log("ZOHO ERROR:", error.response?.data);
+  
+  return res.status(500).json(
+    error.response?.data || { message: error.message }
+  );
+}
 }
