@@ -12,22 +12,15 @@ const ContactForm = () => {
         const formobj = {
             data: [
                 {
-      Last_Name: "Pradnesh",
-      Email: "test@gmail.com",
-      Description: "Hello"
+                    Last_Name: username.current.value,
+                    Email: useremail.current.value,
+                    Description: userdescription.current.value,
                 }
             ]
         };
 
         try {
-            const resp = await axios.post("https://www.zohoapis.in/crm/v8/Leads", formobj,
-                {
-                    headers: {
-                         Authorization: "Zoho-oauthtoken ",
-                            "Content-Type": "application/json",
-                    },
-                }
-            );
+            const resp = await axios.post("/api/lead", formobj);
             console.log("Lead Created Succesfully", resp.data);
             // Clear Result
             username.current.value = "";
