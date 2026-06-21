@@ -12,7 +12,7 @@ import FormSeven from "./componant/FormSeven"
 
 const App = () => {
   return <>
-    <FormSeven></FormSeven>
+    <ContactForm></ContactForm>
   </>
 }
 export default App
